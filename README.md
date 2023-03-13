@@ -1,5 +1,5 @@
 # The-Register-Article-Summariser
-Summarises 'The Register' Articles using GPT.
+Summarises 'The Register' Articles using GPT from OpenAI. It will list the articles created on the same day, and then you can select which article you would like to be summarised. Another option is the 'Summarise All Articles', which does as it says... summarises all articles one by one.
 
 ## Prerequisites
 The following python libraries need to be installed:
