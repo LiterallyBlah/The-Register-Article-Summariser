@@ -18,18 +18,46 @@ def summarize_text(text):
     )
     return response.choices[0].text.strip()
 
-# Get the current date and format it as YYYY/MM/DD
-today = datetime.datetime.today().strftime("%Y/%m/%d")
+# Define function to prompt the user to select a time period for articles
+def select_time_period():
+    print("Please select a time period:")
+    print("1. Today")
+    print("2. Past week")
+    print("3. Past month")
+    selection = int(input("\n>>> "))
+    return selection
 
-# Create the URL for the current date
-url = f"https://www.theregister.com/Archive/{today}/"
+# Get the dates for the past week and month and create URLs for each date
+base_url = "https://www.theregister.com/Archive/"
+today = datetime.datetime.today()
+week_dates = [today - datetime.timedelta(days=x) for x in range(7)]
+week_urls = [base_url + date.strftime("%Y/%m/%d") + "/" for date in week_dates]
+month_dates = [today - datetime.timedelta(days=x) for x in range(30)]
+month_urls = [base_url + date.strftime("%Y/%m/%d") + "/" for date in month_dates]
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
 
-page = requests.get(url, headers=headers)
+# Prompt the user to select a time period for articles
+time_period = select_time_period()
 
-soup = BeautifulSoup(page.content, "html.parser")
-articles = soup.find_all("article")
+# Scrape articles based on the selected time period
+if time_period == 1:
+    url = base_url + today.strftime("%Y/%m/%d") + "/"
+    page = requests.get(url, headers=headers)
+    soup = BeautifulSoup(page.content, "html.parser")
+    articles = soup.find_all("article")
+elif time_period == 2:
+    articles = []
+    for url in week_urls:
+        page = requests.get(url, headers=headers)
+        soup = BeautifulSoup(page.content, "html.parser")
+        articles += soup.find_all("article")
+else:
+    articles = []
+    for url in month_urls:
+        page = requests.get(url, headers=headers)
+        soup = BeautifulSoup(page.content, "html.parser")
+        articles += soup.find_all("article")
 
 # Extract all article tags
 tags = []
@@ -53,7 +81,7 @@ if selection == 1:
     selected_tag = tags[selection]
 
     # Extract all articles with the selected tag and summarize their text
-    selected_articles = [article for article in articles if article.find("span", {"class": "section_name"}).get_text() == selected_tag]
+    selected_articles = [article for article in articles if article.find("span", {"class": "section_name"}).get_text()  == selected_tag]
     for i, article in enumerate(selected_articles):
         link = "https://www.theregister.com" + article.find("a")["href"]
         article_page = requests.get(link, headers=headers)
