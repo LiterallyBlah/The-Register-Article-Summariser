@@ -8,7 +8,7 @@ The following python libraries need to be installed:
 * requests
 * datetime
 
-## Changes to the script
+## Configuring the script
 ### OpenAI API Key
 Make sure you change the OpenAI API key:
 `openai.api_key = "<CHANGE_ME>"`
