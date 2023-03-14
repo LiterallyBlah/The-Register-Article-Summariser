@@ -11,6 +11,14 @@ The following python libraries need to be installed:
 ## How to run
 `python3 theRegisterSummariser.py`
 
+Initial options:
+![image](https://user-images.githubusercontent.com/22526586/224951601-d8127c1c-3f87-4ebf-9f14-b54bb036cc88.png)
+Option 1:
+![image](https://user-images.githubusercontent.com/22526586/224951658-adb4db14-1fd2-4007-b2a4-05389252b4d7.png)
+Option 2:
+![image](https://user-images.githubusercontent.com/22526586/224951744-f69c8a37-909b-435c-bb81-f8e4feb44882.png)
+
+
 ## Configuring the script
 ### OpenAI API Key
 Make sure you change the OpenAI API key:
