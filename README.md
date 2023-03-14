@@ -8,6 +8,9 @@ The following python libraries need to be installed:
 * requests
 * datetime
 
+## How to run
+`python3 theRegisterSummariser.py`
+
 ## Configuring the script
 ### OpenAI API Key
 Make sure you change the OpenAI API key:
