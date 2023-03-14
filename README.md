@@ -11,6 +11,10 @@ The following python libraries need to be installed:
 ## How to run
 `python3 theRegisterSummariser.py`
 
+Date View:
+
+![image](https://user-images.githubusercontent.com/22526586/224956070-84c386ec-9c7c-4a41-a30e-a974946e68a7.png)
+
 Initial options:
 
 ![image](https://user-images.githubusercontent.com/22526586/224951601-d8127c1c-3f87-4ebf-9f14-b54bb036cc88.png)
