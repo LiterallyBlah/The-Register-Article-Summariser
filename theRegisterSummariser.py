@@ -3,6 +3,17 @@ from bs4 import BeautifulSoup
 import datetime
 import openai
 
+def print_banner():
+    print(" _____ _              __            _     _            ")
+    print("/__   \ |__   ___    /__\ ___  __ _(_)___| |_ ___ _ __")
+    print("  / /\/ '_ \ / _ \  / \/// _ \/ _` | / __| __/ _ \ '__|")
+    print(" / /  | | | |  __/ / _  \  __/ (_| | \__ \ ||  __/ |   ")
+    print(" \/   |_| |_|\___| \/ \_/\___|\__, |_|___/\__\___|_|   ")
+    print("                              |___/                    ")
+    print("\nA news article summarizer powered by OpenAI's GPT-3 model\n\n")
+
+print_banner()
+
 # Configure OpenAI API key
 openai.api_key = "<CHANGE_ME>"
 
