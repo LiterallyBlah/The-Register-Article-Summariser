@@ -13,7 +13,7 @@ The following python libraries need to be installed:
 
 Date View:
 
-![image](https://user-images.githubusercontent.com/22526586/224956070-84c386ec-9c7c-4a41-a30e-a974946e68a7.png)
+![image](https://user-images.githubusercontent.com/22526586/224956165-33e53d27-bf73-4710-beb7-69985f106795.png)
 
 Initial options:
 
